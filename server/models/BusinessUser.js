@@ -1,5 +1,6 @@
 const { Schema, model } = require("mongoose");
 const jobListingsSchema = require("./JobListings");
+const bcrypt = require("bcrypt");
 
 const businessUserSchema = new Schema(
   {

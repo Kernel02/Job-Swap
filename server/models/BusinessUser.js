@@ -1,5 +1,5 @@
 const { Schema, model } = require("mongoose");
-const jobListingsSchema = require('./JobListings')
+const jobListingsSchema = require("./JobListings");
 
 const businessUserSchema = new Schema(
   {
@@ -29,6 +29,19 @@ const businessUserSchema = new Schema(
     },
   }
 );
+
+businessUserSchema.pre("save", async function (next) {
+  if (this.isNew || this.isModified("password")) {
+    const saltRounds = 10;
+    this.password = await bcrypt.hash(this.password, saltRounds);
+  }
+
+  next();
+});
+
+businessUserSchema.methods.isCorrectPassword = async function (password) {
+  return bcrypt.compare(password, this.password);
+};
 
 const BusinessUser = model("BusinessUser", businessUserSchema);
 

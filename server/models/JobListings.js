@@ -2,11 +2,11 @@ const { Schema, model } = require("mongoose");
 
 const jobListingsSchema = new Schema(
   {
-    title: {
+    jobTitle: {
       type: String,
       required: true,
     },
-    description: {
+    jobDescription: {
       type: String,
       required: true,
     },

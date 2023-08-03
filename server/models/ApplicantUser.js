@@ -38,6 +38,6 @@ applicantUserSchema.methods.isCorrectPassword = async function (password) {
 };
 
 
-const Applicant = model('Applicant', applicantUserSchema);
+const ApplicantUser = model('ApplicantUser', applicantUserSchema);
 
-module.exports = Applicant;
+module.exports = ApplicantUser;

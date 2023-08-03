@@ -1,0 +1,27 @@
+[
+    {
+        "jobTitle": "Tech Support",
+        "jobDescription": "Help customers who call",
+        "salary": 32000
+    },
+    {
+        "jobTitle": "Accountant",
+        "jobDescription": "In need of someone who is excellent with numbers",
+        "salary": 50000
+    },   
+    {
+        "jobTitle": "Dog Groomer",
+        "jobDescription": "Cut, clean, and care for dogs",
+        "salary": 27000
+    },   
+    {
+        "jobTitle": " Math Teacher",
+        "jobDescription": "In need of a 6th grade math teacher",
+        "salary": 40000
+    },   
+    {
+        "jobTitle": "Grill Cook",
+        "jobDescription": "Flip Burgers with us!",
+        "salary": 32000
+    }
+]

@@ -22,6 +22,4 @@ const jobListingsSchema = new Schema(
   }
 );
 
-const JobListings = model('JobListing', jobListingsSchema);
-
-module.exports = JobListings;
+module.exports = jobListingsSchema;

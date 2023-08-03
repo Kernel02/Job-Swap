@@ -1,0 +1,32 @@
+[
+    {
+        "username": "dev98",
+        "email": "dev98@gmail.com",
+        "password": "1234"
+
+    },
+    {
+        "username": "mountainman22",
+        "email": "mountainman22@gmail.com",
+        "password": "4321"
+
+    },
+    {
+        "username": "hotrod94",
+        "email": "hotrod94@gmail.com",
+        "password": "2323"
+
+    },   
+    {
+        "username": "heaterJohn",
+        "email": "heaterjohn@gmail.com",
+        "password": "1234"
+
+    },
+    {
+        "username": "janeDoe44",
+        "email": "janeDoe@gmail.com",
+        "password": "3084"
+
+    }
+]

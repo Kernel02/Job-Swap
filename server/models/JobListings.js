@@ -21,3 +21,5 @@ const jobListingsSchema = new Schema(
     },
   }
 );
+
+module.exports = jobListingsSchema;

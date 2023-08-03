@@ -1,10 +1,17 @@
+import NavComponent from "../components/NavComponent";
+import FooterComponent from "../components/FooterComponent";
+import SearchComponent from "../components/SearchComponent";
+import ResultComponent from "../components/ResultComponent";
+
 const Home = () => {
   return (
     <div>
-      <h1>Header Component</h1>
-      <h1>Nav Component</h1>
-      <h1>Home Content</h1>
-      <h1>Footer Component</h1>
+      <NavComponent />
+      <div class="row">
+        <SearchComponent />
+        <ResultComponent />
+      </div>
+      <FooterComponent />
     </div>
   );
 };

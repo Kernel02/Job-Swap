@@ -1,10 +1,26 @@
-const { BusinessUser, ApplicantUser, JobListings} = require('mongoose');
+const { ApplicantUser, BusinessUser, JobListings} = require('../models');
 
 const resolvers = {
     Query: {
-        JobListings: async() => {
-            return JobListings.find({});
+        applicantUser: async()  => {
+            return await ApplicantUser.find({});
         },
-        
-    }
-}
+        businessUsers: async () => {
+            return await BusinessUser.find({}).populate('jobListings');
+        },
+        jobListings: async() => {
+            return await JobListings.find({}).populate('businessUsers');
+        },
+    },
+    Mutation: {
+        addBusinessUser: async(parent, {name, email,password, description}) => {
+            return await BusinessUser.create({name, email,password, description});
+        },
+        addJobListing: async(parent, {jobTitle, jobDescription, salary}) => {
+            return await JobListings.create({jobTitle,jobDescription, salary});
+        },
+        addApplicantUser: async(parent, {username, email, password}) => {
+            return await ApplicantUser.create({username, email, password});
+        },
+    },
+};

@@ -22,7 +22,10 @@ const businessUserSchema = new Schema(
     description: {
       type: String,
     },
-    jobListings: [jobListingsSchema],
+    jobListings: {
+      type: Schema.Types.ObjectId,
+      ref: 'JobListings'
+    }
   },
   {
     toJSON: {

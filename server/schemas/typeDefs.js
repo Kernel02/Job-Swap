@@ -5,12 +5,15 @@ const typeDefs = gql`
         _id: ID!
         username: String!
         email: String!
+        password: String!
     }
 
 
     type BusinessUser {
         _id: ID!
         name: String!
+        email: String!
+        password: String!
         description: String!
         jobListings: [JobListings]
     }
@@ -20,12 +23,27 @@ const typeDefs = gql`
         jobTitle: String!
         jobDescription: String!
         salary: Int
+        businessUser: [BusinessUser]
     }
+
 
     type Query {
         applicantUser: [ApplicantUser]
         businessUser: [BusinessUser]
         jobListings: [JobListings]
+    }
+
+    type Mutation {
+        addApplicantUser(username: String!, email: String!, password: String!): ApplicantUser
+        removeApplicantUser(applicantUserid: ID!): ApplicantUser
+
+        addBusinessUser(name: String!, email: String!, password: String!, description: String!, jobListings: String): BusinessUser
+        removeBusinessUser(businessUserid: ID!): BusinessUser
+
+        addJobListings(jobTitle: String!, jobDescription: String!, salary: Int): JobListings
+        removeJobListings(jobListingsid: ID!): JobListings
+
+
     }
 `;
 

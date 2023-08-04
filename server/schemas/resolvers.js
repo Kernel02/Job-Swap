@@ -6,18 +6,18 @@ const resolvers = {
             return await ApplicantUser.find({});
         },
 
-        businessUser: async () => {
-            return await BusinessUser.find({}).populate('jobListings');
-        },
+        // businessUser: async () => {
+        //     return await BusinessUser.find({}).populate('jobListings');
+        // },
         
         jobListings: async() => {
             return await JobListings.find({}).populate('businessUsers');
         },
     },
     Mutation: {
-        addBusinessUser: async(parent, {name, email,password, description}) => {
-            return await BusinessUser.create({name, email,password, description});
-        },
+        // addBusinessUser: async(parent, {name, email,password, description}) => {
+        //     return await BusinessUser.create({name, email,password, description});
+        // },
         addJobListings: async(parent, {jobTitle, jobDescription, salary}) => {
             return await JobListings.create({jobTitle,jobDescription, salary});
         },

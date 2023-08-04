@@ -19,6 +19,10 @@ const applicantUserSchema = new Schema(
             type: String,
             required: true,
           },
+          descritpion: {
+            type: String,
+            required: false
+          },
         isBusinessUser: {
             type: Boolean,
             default: false

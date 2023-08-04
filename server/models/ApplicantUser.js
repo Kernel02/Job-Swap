@@ -15,10 +15,20 @@ const applicantUserSchema = new Schema(
             unique: true,
             match: [/.+@.+\..+/, 'Must use a valid email address'],
           },
-          password: {
+        password: {
             type: String,
             required: true,
           },
+        isBusinessUser: {
+            type: Boolean,
+            default: false
+          },
+        jobListings: [
+            {
+              type: Schema.Types.ObjectId,
+              ref: 'JobListings'
+            }
+          ]
     },
 );
 

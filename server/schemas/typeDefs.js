@@ -26,6 +26,13 @@ const typeDefs = gql`
         businessUser: [BusinessUser]
     }
 
+    type Auth {
+        token: ID!
+        applicantUser: ApplicantUser
+        businessUser: BusinessUser
+      }
+    
+
 
     type Query {
         applicantUser: [ApplicantUser]
@@ -34,6 +41,10 @@ const typeDefs = gql`
     }
 
     type Mutation {
+
+        logIn(email: String!, password: String!): Auth
+
+
         addApplicantUser(username: String!, email: String!, password: String!): ApplicantUser
         removeApplicantUser(applicantUserid: ID!): ApplicantUser
 

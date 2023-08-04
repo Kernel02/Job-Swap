@@ -1,5 +1,5 @@
 const { Schema, model } = require("mongoose");
-
+const BusinessUser = require('./BusinessUser');
 const jobListingsSchema = new Schema(
   {
     jobTitle: {
@@ -14,10 +14,12 @@ const jobListingsSchema = new Schema(
       type: Number,
       required: true,
     },
-    businessUser: {
-      type: Schema.Types.ObjectId,
-      ref: 'BusinessUser'
-    }
+    businessUser: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'BusinessUser'
+      }
+    ]
   },
   {
     toJSON: {
@@ -26,4 +28,5 @@ const jobListingsSchema = new Schema(
   }
 );
 
-module.exports = jobListingsSchema;
+const JobListings = model("JobListings", jobListingsSchema);
+module.exports = JobListings;

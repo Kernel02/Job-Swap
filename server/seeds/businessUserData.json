@@ -3,35 +3,30 @@
         "name": "Computer Center",
         "email": "computercenter@aol.com",
         "password": "23eddf",
-        "description": "We sell computers!",
-        "jobListings": ""
+        "description": "We sell computers!"
     },
     {
         "name": "R&R Law Firm",
         "email": "R&rlaw@aol.com",
         "password": "23eddf",
-        "description": "We will get you out of jail!",
-        "jobListings": ""
+        "description": "We will get you out of jail!"
     },    
     {
         "name": "Fluff Factory",
         "email": "fluffyfactory@aol.com",
         "password": "23eddf",
-        "description": "We are a great choice to groom your pets!",
-        "jobListings": ""
+        "description": "We are a great choice to groom your pets!"
     },    
     {
         "name": "HelloWorld Middle School",
         "email": "helloWorldMiddle@aol.gov",
         "password": "23eddf",
-        "description": "We teach your kids!",
-        "jobListings": ""
+        "description": "We teach your kids!"
     },    
     {
         "name": "Burger Shak",
         "email": "burgershak@aol.com",
         "password": "23eddf",
-        "description": "We made the best double cheeseburgers around!",
-        "jobListings": ""
+        "description": "We made the best double cheeseburgers around!"
     }
 ]

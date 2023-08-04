@@ -5,9 +5,11 @@ const resolvers = {
         applicantUser: async()  => {
             return await ApplicantUser.find({});
         },
-        businessUsers: async () => {
+
+        businessUser: async () => {
             return await BusinessUser.find({}).populate('jobListings');
         },
+        
         jobListings: async() => {
             return await JobListings.find({}).populate('businessUsers');
         },
@@ -16,7 +18,7 @@ const resolvers = {
         addBusinessUser: async(parent, {name, email,password, description}) => {
             return await BusinessUser.create({name, email,password, description});
         },
-        addJobListing: async(parent, {jobTitle, jobDescription, salary}) => {
+        addJobListings: async(parent, {jobTitle, jobDescription, salary}) => {
             return await JobListings.create({jobTitle,jobDescription, salary});
         },
         addApplicantUser: async(parent, {username, email, password}) => {

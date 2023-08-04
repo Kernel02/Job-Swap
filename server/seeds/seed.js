@@ -9,20 +9,15 @@ const jobListingsData = require('./jobListingsData.json');
 
 
 db.once('open', async () => {
-    try {
-        // Used to clean the database
         await ApplicantUser.deleteMany({});
-        await BusinessUser.deleteMany({});
-        await JobListings.deleteMany({});
+        await ApplicantUser.create(applicantUserData);
 
-        // Will bulk create all models
-        const ApplicantUsers = await ApplicantUser.insertMany(applicantUserData);
-        const BusinessUsers = await BusinessUser.insertMany(businessUserData);
-        const JobListing = await JobListings.insertMany(jobListingsData); 
-        
+        await BusinessUser.deleteMany({});
+        await BusinessUser.create(businessUserData);
+
+        await JobListings.deleteMany({});
+        await JobListings.create(jobListingsData);
+
         console.log('All done!');
         process.exit(0)
-    } catch (err) {
-        throw err;
-    }
 });

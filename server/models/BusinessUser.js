@@ -1,5 +1,5 @@
 const { Schema, model } = require("mongoose");
-const jobListingsSchema = require("./JobListings");
+const JobListings = require("./JobListings");
 const bcrypt = require("bcrypt");
 
 const businessUserSchema = new Schema(
@@ -22,10 +22,12 @@ const businessUserSchema = new Schema(
     description: {
       type: String,
     },
-    jobListings: {
-      type: Schema.Types.ObjectId,
-      ref: 'JobListings'
-    }
+    jobListings: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'JobListings'
+      }
+    ]
   },
   {
     toJSON: {

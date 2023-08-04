@@ -14,12 +14,6 @@ const jobListingsSchema = new Schema(
       type: Number,
       required: true,
     },
-    businessUser: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: 'BusinessUser'
-      }
-    ]
   },
   {
     toJSON: {

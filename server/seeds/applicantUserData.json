@@ -2,7 +2,8 @@
     {
         "username": "dev98",
         "email": "dev98@gmail.com",
-        "password": "1234"
+        "password": "1234",
+        "description": "This is a description"
 
     },
     {

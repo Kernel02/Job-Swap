@@ -12,34 +12,23 @@ const typeDefs = gql`
     }
 
 
-    // type BusinessUser {
-    //     _id: ID!
-    //     name: String!
-    //     email: String!
-    //     password: String!
-    //     description: String!
-    //     jobListings: [JobListings]
-    // }
 
     type JobListings {
         _id: ID!
         jobTitle: String!
         jobDescription: String!
         salary: Int
-        // businessUser: [BusinessUser]
     }
 
     type Auth {
         token: ID!
         applicantUser: ApplicantUser
-        // businessUser: BusinessUser
       }
     
 
 
     type Query {
         applicantUser: [ApplicantUser]
-        // businessUser: [BusinessUser]
         jobListings: [JobListings]
     }
 
@@ -48,11 +37,10 @@ const typeDefs = gql`
         logIn(email: String!, password: String!): Auth
 
 
-        addApplicantUser(username: String!, email: String!, password: String!, description: String, isBusinessUser: Boolean!, jobListings: String): ApplicantUser
+        addApplicantUser(username: String!, email: String!, password: String!, isBusinessUser: Boolean!): Auth
         removeApplicantUser(applicantUserid: ID!): ApplicantUser
 
-        // addBusinessUser(name: String!, email: String!, password: String!, description: String!, jobListings: String): BusinessUser
-        // removeBusinessUser(businessUserid: ID!): BusinessUser
+
 
         addJobListings(jobTitle: String!, jobDescription: String!, salary: Int): JobListings
         removeJobListings(jobListingsid: ID!): JobListings

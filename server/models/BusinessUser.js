@@ -1,54 +1,54 @@
-const { Schema, model } = require("mongoose");
-const JobListings = require("./JobListings");
-const bcrypt = require("bcrypt");
+// const { Schema, model } = require("mongoose");
+// const JobListings = require("./JobListings");
+// const bcrypt = require("bcrypt");
 
-const businessUserSchema = new Schema(
-  {
-    name: {
-      type: String,
-      required: true,
-      unique: true,
-    },
-    email: {
-      type: String,
-      required: true,
-      unique: true,
-      match: [/.+@.+\..+/, "Must use a valid email address"],
-    },
-    password: {
-      type: String,
-      required: true,
-    },
-    description: {
-      type: String,
-    },
-    jobListings: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: 'JobListings'
-      }
-    ]
-  },
-  {
-    toJSON: {
-      virtuals: true,
-    },
-  }
-);
+// const businessUserSchema = new Schema(
+//   {
+//     name: {
+//       type: String,
+//       required: true,
+//       unique: true,
+//     },
+//     email: {
+//       type: String,
+//       required: true,
+//       unique: true,
+//       match: [/.+@.+\..+/, "Must use a valid email address"],
+//     },
+//     password: {
+//       type: String,
+//       required: true,
+//     },
+//     description: {
+//       type: String,
+//     },
+//     jobListings: [
+//       {
+//         type: Schema.Types.ObjectId,
+//         ref: 'JobListings'
+//       }
+//     ]
+//   },
+//   {
+//     toJSON: {
+//       virtuals: true,
+//     },
+//   }
+// );
 
-businessUserSchema.pre("save", async function (next) {
-  if (this.isNew || this.isModified("password")) {
-    const saltRounds = 10;
-    this.password = await bcrypt.hash(this.password, saltRounds);
-  }
+// businessUserSchema.pre("save", async function (next) {
+//   if (this.isNew || this.isModified("password")) {
+//     const saltRounds = 10;
+//     this.password = await bcrypt.hash(this.password, saltRounds);
+//   }
 
-  next();
-});
+//   next();
+// });
 
-businessUserSchema.methods.isCorrectPassword = async function (password) {
-  return bcrypt.compare(password, this.password);
-};
+// businessUserSchema.methods.isCorrectPassword = async function (password) {
+//   return bcrypt.compare(password, this.password);
+// };
 
-const BusinessUser = model("BusinessUser", businessUserSchema);
+// const BusinessUser = model("BusinessUser", businessUserSchema);
 
-module.exports = BusinessUser;
+// module.exports = BusinessUser;

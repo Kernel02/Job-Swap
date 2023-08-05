@@ -38,7 +38,7 @@ const typeDefs = gql`
 
 
         addApplicantUser(username: String!, email: String!, password: String!, isBusinessUser: Boolean!): Auth
-        removeApplicantUser(applicantUserid: ID!): ApplicantUser
+        removeApplicantUser(applicantUserid: ID!): Auth
 
 
 

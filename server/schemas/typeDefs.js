@@ -6,8 +6,6 @@ const typeDefs = gql`
         username: String!
         email: String!
         password: String!
-        description: String
-        isBusinessUser: Boolean!
         jobListings: [JobListings]
     }
 

@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/main.05b57f5a.css","mappings":"AAAA,KAGE,qBAAuB,CAFvB,YAAa,CACb,qBAEF,CAEA,KACE,aACF","sources":["index.css"],"sourcesContent":["body {\n  display: flex;\n  flex-direction: column;\n  background-color: black;\n}\n\nmain {\n  flex: 1 0 auto;\n}\n"],"names":[],"sourceRoot":""}

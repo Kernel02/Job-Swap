@@ -12,7 +12,7 @@ const resolvers = {
         // },
         
         jobListings: async() => {
-            return await JobListings.find({}).populate('businessUsers');
+            return await JobListings.find({})
         },
     },
     Mutation: {

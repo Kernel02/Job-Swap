@@ -1,7 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
+import UserProvider from "./utils/UserContext";
+import JobListingProvider from "./utils/JobListingContext";
 import Home from "./pages/Home";
+import Login from "./pages/Login";
 
 const client = new ApolloClient({
   uri: "/graphql",
@@ -11,11 +14,16 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Home />} />
-        </Routes>
-      </Router>
+      <UserProvider>
+        <JobListingProvider>
+          <Router>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/Login" element={<Login />} />
+            </Routes>
+          </Router>
+        </JobListingProvider>
+      </UserProvider>
     </ApolloProvider>
   );
 }

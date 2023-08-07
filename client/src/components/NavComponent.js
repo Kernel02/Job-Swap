@@ -11,6 +11,11 @@ export default function NavComponent() {
               Login
             </a>
           </li>
+          <li>
+            <a class="black-text" href="/login">
+              Add Job Listing
+            </a>
+          </li>
         </ul>
       </div>
     </nav>

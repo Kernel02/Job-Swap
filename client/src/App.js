@@ -5,6 +5,7 @@ import UserProvider from "./utils/UserContext";
 import JobListingProvider from "./utils/JobListingContext";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
+import AddJob from "./pages/AddJob"
 
 const client = new ApolloClient({
   uri: "/graphql",
@@ -20,6 +21,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/Login" element={<Login />} />
+              <Route path="/addJob" element={<AddJob />} />
             </Routes>
           </Router>
         </JobListingProvider>

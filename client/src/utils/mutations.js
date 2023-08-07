@@ -1,7 +1,7 @@
 import { gql } from "@apollo/client";
 
 export const CREATE_JOBLISTING = gql`
-  mutation createMatchup(
+  mutation createJobListing(
     $jobTitle: String!
     $jobDescription: String!
     $salary: Number!

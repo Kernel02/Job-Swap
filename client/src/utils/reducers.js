@@ -13,18 +13,9 @@ export default function reducer(state, action) {
     case ADD_JOBLISTING: {
       const newJobListing = { ...action.payload };
 
-      const userIndex = state.users.findIndex(
-        (user) => user.id === action.payload
-      );
-      const updatedUser = { ...state.users[userIndex] };
-
-      const userCopy = [...state.users];
-      userCopy[userIndex] = updatedUser;
-
       return {
         ...state,
-        users: userCopy,
-        jobs: [...state.users, newJobListing],
+        jobs: [...state.jobListings, newJobListing],
       };
     }
     default: {

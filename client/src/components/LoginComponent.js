@@ -1,5 +1,5 @@
 import React, { useState, useReducer } from "react";
-import reducer from "..utils/reducers";
+import reducer from "../utils/reducers";
 import { useUser } from "../utils/UserContext";
 import { ADD_APPLICANTUSER } from "../utils/actions";
 

@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <div>
       <NavComponent />
-      <div class="row">
+      <div className="row">
         <SearchComponent />
         <ResultComponent />
       </div>
